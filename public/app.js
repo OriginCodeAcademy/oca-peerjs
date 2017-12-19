@@ -10,14 +10,19 @@ init();
 
 // Start everything up
 function init() {
+  console.log('initializing')
   if (!navigator.getUserMedia) return unsupported();
 
+  console.log('getting audio stream')
   getLocalAudioStream(function(err, stream) {
     if (err || !stream) return;
 
+    console.log('connecting to peerjs')
     connectToPeerJS(function(err) {
       if (err) return;
 
+
+      console.log('registering id with server')
       registerIdWithServer(me.id);
       if (call.peers.length) callPeers();
       else displayShareMessage();
@@ -47,6 +52,7 @@ function connectToPeerJS(cb) {
 // Add our ID to the list of PeerJS IDs for this call
 function registerIdWithServer() {
   display('Registering ID with server...');
+  console.log('call', call);
   $.post('/' + call.id + '/addpeer/' + me.id);
 } 
 
