@@ -5,6 +5,7 @@ navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia
 var me = {};
 var myStream;
 var peers = {};
+console.log('call?', call);
 
 init();
 
@@ -20,7 +21,6 @@ function init() {
     console.log('connecting to peerjs')
     connectToPeerJS(function(err) {
       if (err) return;
-
 
       console.log('registering id with server')
       registerIdWithServer(me.id);

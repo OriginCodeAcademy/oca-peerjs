@@ -7,6 +7,7 @@ var Call = require('./call');
 // Create a new Call instance, and redirect
 router.get('/new', function(req, res) {
   var call = Call.create();
+  console.log(call);
   res.redirect('/' + call.id);
 });
 
