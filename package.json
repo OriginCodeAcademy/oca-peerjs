@@ -4,7 +4,7 @@
   "description": "Audio chat using WebRTC and PeerJS",
   "main": "index.js",
   "scripts":{
-    "start": "nodemon ."
+    "start": "node ."
   },
   "dependencies": {
     "express": "~4.10.2",
@@ -12,6 +12,6 @@
     "uuid": "~2.0.1"
   },
   "devDependencies": {},
-  "author": "Noah Burney",
-  "license": "BSD-2-Clause"
+  "author": "Kyle Belfort",
+  "license": "MIT"
 }
