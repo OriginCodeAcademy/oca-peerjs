@@ -2,8 +2,9 @@ var uuid = require('uuid');
 
 var calls = [];
 
-function Call() {
-  this.id = uuid.v1();
+
+function Call(id = false) {
+  this.id = (!!id ? id : uuid.v1());
   this.started = Date.now();
   this.peers = [];
 }
@@ -21,8 +22,9 @@ Call.prototype.removePeer = function(peerId) {
   if (index !== -1) this.peers.splice(index, 1);
 };
 
-Call.create = function() {
-  var call = new Call();
+Call.create = function(id) {
+  var call = new Call(id);
+  console.log(call);
   calls.push(call);
   return call;
 };
